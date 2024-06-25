@@ -9,20 +9,19 @@ import Foundation
 import SwiftUI
 
 struct User: Codable, Identifiable {
-    var id: String
-    var name: String
-    var age: Int
-    var company: String
-    var isActive: Bool
-    var friends: [Friend]
+    let id: UUID
+    let isActive: Bool
+    let name: String
+    let age: Int
+    let company: String
+    let email: String
+    let address: String
+    let about: String
+    let registered: Date
+    let tags: [String]
+    let friends: [Friend]
     
-    var checkIsActive: String {
-        return self.isActive ? "🟢" :"🔴"
+    var formattedDate: String {
+        registered.formatted(date: .abbreviated, time: .omitted)
     }
-}
-
-
-struct Friend: Codable, Identifiable {
-    var id: String
-    var name: String
 }
