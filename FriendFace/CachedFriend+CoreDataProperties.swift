@@ -23,5 +23,4 @@ extension CachedFriend: Identifiable {
     var wrappedName: String {
         name ?? "Unknown"
     }
-
 }
